@@ -1,0 +1,26 @@
+// Covid19 Vaccination System
+// Application should be developed to help government meet the vaccination task in collboration with Government and Private hospitals
+// Setup Needs to be done by students (React(WebPack) and NodeAPI) both
+// We Should Have an Admin Section (or Hospital Section) to
+// 1. Register Vaccine (Name, Type, Price, Side Effect, Origin, Doses Required, Other Info (like What Strains Covers))
+// 2. List Of Hospitals (Name, Address, Type(Govt/Private), Charges)
+// 3. Approover screen to approve the User, Hospital, and Select Vaccine for a given time
+// 4. Once Approved should show all Vaccinated persons list (and number of doses supplied)
+
+// User Section/ Pateint Section To (Normal Site)
+// 1. Should Allow users to register with all basic details (Name, Age, Profession, Contact, Address, Gender, Any Disease, Medical Certificate, etc)
+// 2. Upon Registered User should be able to see a screen with - Hospital Info, Vaccine, (Number of Doses Required), Appointment, Charges To Payment
+// 3. Once Charges are paid (just make an entry upon Pay click with confirmation) take user to new screen schedule
+// 4. On Schedule screen if Current date less Scheduled Date show all details of schedule for the user, if its more than show successfully vaccinated
+
+Web Content Accessibility Guideline
+Application usage by persons  with various issues like
+o   color blind
+o   low vision
+o   hearing loss or deaf
+o   motor related issue
+o   physical disability
+o   cognitive disability
+o   old age persons
+o   low literacy
+o   disadvantaged persons

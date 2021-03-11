@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App title={'Covid Vaccination App'}/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

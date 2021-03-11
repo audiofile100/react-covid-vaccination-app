@@ -1,6 +1,15 @@
 import React from 'react';
-import './App.css';
+import Container from "@material-ui/core/Container";
+import SimpleTabs from "./Components/SimpleTabsComponent/SimpleTabsComponent";
 
-const App = ({ title }) => <div>{title}</div>
+function App() {
+    return (
+        <div>
+            <Container maxWidth={"lg"}>
+                <SimpleTabs />
+            </Container>
+        </div>
+    );
+}
 
 export default App;

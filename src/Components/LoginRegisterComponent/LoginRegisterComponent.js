@@ -10,45 +10,42 @@ class LoginRegisterComponent extends React.Component {
         };
     }
 
-    onChangeText = (evt) => {
-        let target = evt.target;
-        let classlist = target.classList.toString();
-        let typedValue = target.value;
+    setUsername = event => {
+        this.setState({
+            username: event.target.value
+        });
+    };
 
-        if (classlist.indexOf("username") >= 0) {
-            this.setState({
-                username: typedValue
-            });
-        } else if (classlist.indexOf("password") >= 0) {
-            this.setState({
-                password: typedValue
-            });
-        }
-    }
+    setPassword = event => {
+        this.setState({
+            password: event.target.value
+        });
+    };
 
     handleClose = () => {
         this.props.onClose();
     }
 
     handleSubmit = () => {
-        alert(this.state.username + " " + this.state.password);
+        //alert(this.state.username + " " + this.state.password);
+        console.log("PROPS", this.props);
+        //this.props.login(this.state);
     }
+
     render() {
         return (
             <Dialog onClose={this.handleClose} open={this.props.open}>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        <TextField className={"username"}
-                                   variant={"outlined"}
+                        <TextField variant={"outlined"}
                                    placeholder="username"
-                                   onChange={this.onChangeText}
+                                   onChange={this.setUsername}
                                    value={this.state.username} />
                     </Grid>
                     <Grid item xs={6}>
-                        <TextField className={"password"}
-                                   variant={"outlined"}
+                        <TextField variant={"outlined"}
                                    placeholder="password"
-                                   onChange={this.onChangeText}
+                                   onChange={this.setPassword}
                                    value={this.state.password} />
                     </Grid>
                     <Grid item xs={6}>

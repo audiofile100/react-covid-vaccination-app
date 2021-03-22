@@ -16,7 +16,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import LoginRegisterCard from "../LoginRegisterCard/LoginRegisterCard";
-import MakeUpdateAppointmentCard from "../MakeUpdateAppointmentCard/MakeUpdateAppointmentCard";
+import AppointmentCard from "../AppointmentCard/AppointmentCard";
+import CollapsibleTable from "../ResultsComponent/ResultsComponent";
 
 const drawerWidth = 240;
 
@@ -93,9 +94,12 @@ export default function PermanentDrawerLeft() {
                             <LoginRegisterCard />
                         </Grid>
                         <Grid item xs={6}>
-                            <MakeUpdateAppointmentCard />
+                            <AppointmentCard />
                         </Grid>
                     </Grid>
+                </Container>
+                <Container maxWidth={"lg"} style={{ marginTop: 75 }}>
+                    <CollapsibleTable></CollapsibleTable>
                 </Container>
             </main>
         </div>

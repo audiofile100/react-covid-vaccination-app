@@ -1,5 +1,7 @@
 import React from "react";
 import {Button, Dialog, Grid, TextField} from "@material-ui/core";
+import {connect} from "react-redux";
+import {login} from "../../State/Action";
 
 class LoginRegisterComponent extends React.Component {
     constructor(props) {
@@ -27,9 +29,8 @@ class LoginRegisterComponent extends React.Component {
     }
 
     handleSubmit = () => {
-        //alert(this.state.username + " " + this.state.password);
-        console.log("PROPS", this.props);
-        //this.props.login(this.state);
+        this.props.login(this.state);
+        this.props.onClose();
     }
 
     render() {
@@ -57,4 +58,18 @@ class LoginRegisterComponent extends React.Component {
     }
 }
 
-export default LoginRegisterComponent;
+let mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        login: (userObj) => {
+            dispatch(login(userObj));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginRegisterComponent);

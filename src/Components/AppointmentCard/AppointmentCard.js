@@ -3,9 +3,13 @@ import {Button, CardActions, CardContent} from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import AppointmentComponent from "./AppointmentComponent";
 import 'date-fns';
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
-function AppointmentCard() {
+function AppointmentCard(props) {
     const [open, setOpen] = React.useState(false);
+
+    //let username = props.user && props.user.username ? props.user.username : "";
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -23,10 +27,21 @@ function AppointmentCard() {
             </CardContent>
             <CardActions>
                 <AppointmentComponent open={open} onClose={handleClose} />
+
                 <Button size={"large"} onClick={handleClickOpen}>Enter</Button>
             </CardActions>
         </Card>
     )
 }
 
-export default AppointmentCard;
+AppointmentCard.propTypes = {
+    user : PropTypes.object.isRequired
+}
+
+let mapStateToProps = (state)=>{
+    return {
+        user : state.user
+    }
+}
+
+export default connect(mapStateToProps, null)(AppointmentCard);

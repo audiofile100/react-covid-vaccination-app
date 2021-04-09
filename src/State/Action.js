@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
+// TODO: update to use POST when logging in
 export const login = (userObj) => ({
     type: ActionTypes.FETCH_USER,
     payload: {
@@ -19,3 +20,23 @@ export const login = (userObj) => ({
         })
     }
 });
+
+export const saveAppointment = (appObj) => {
+    return function(dispatch) {
+        window.fetch("http://localhost:3002/api/saveAppointment", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(appObj)
+        })
+            .then (res => res.json())
+            .then (resAppointment => {
+                console.log("saveAppointment-response", resAppointment);
+            })
+            .catch((err) => {
+                console.log("ERROR saving review");
+            })
+    }
+};
